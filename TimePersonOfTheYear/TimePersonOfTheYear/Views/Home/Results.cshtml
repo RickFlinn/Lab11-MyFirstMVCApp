@@ -1,4 +1,43 @@
 ﻿@model List<TimePersonOfTheYear.Models.TimePerson>
+@using TimePersonOfTheYear.Models;
+
+<html>
+    <head>
+        <link href="~/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <a href="/Home/Index">Home</a>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th>Honor</th>
+                    <th>Country</th>
+                    <th>Born</th>
+                    <th>Died</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Context</th>
+                </tr>
+                @foreach (TimePerson person in Model)
+                 {
+                 <tr>
+                    <th>@person.Year</th>
+                    <td>@person.Honor</td>
+                    <td>@person.Country</td>
+                    <td>@person.BirthYear</td>
+                    <td>@person.DeathYear</td>
+                    <td>@person.Title</td>
+                    <td>@person.Category</td>
+                    <td>@person.Context</td>
+                 </tr>
+                 }
+
+            </table>
+
+        </main>
+
+    </body>
 
 
-
+</html>
