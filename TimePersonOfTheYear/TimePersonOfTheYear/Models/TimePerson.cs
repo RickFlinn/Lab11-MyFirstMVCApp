@@ -50,14 +50,16 @@ namespace TimePersonOfTheYear.Models
         /// <param name="start"> Start of year search range </param>
         /// <param name="end"> End of year search range </param>
         /// <returns> List of TimePerson objects within given year search ranges </returns>
-        public static List<TimePerson> GetPeople(int start, int end)
+        public static List<TimePerson> GetPeople(int start, int end, string webRootPath)
         {
             List<TimePerson> peopleInRange = null;
             try
             {
                 if (start < end)
                 {
-                    string[] csvLines = File.ReadAllLines("../wwwroot/personOfTheYear.csv");
+                    //string[] csvLines = File.ReadAllLines("webroot/personOfTheYear.csv");
+                    string[] csvLines = File.ReadAllLines(webRootPath + "/personOfTheYear.csv");
+                    string firstLine = csvLines[0];
                     peopleInRange = csvLines.Skip(1)
                                             .Select(line => new TimePerson(line))
                                             .Where(person => person.Year > start && person.Year < end)
