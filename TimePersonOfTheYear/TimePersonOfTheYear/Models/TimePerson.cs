@@ -42,6 +42,14 @@ namespace TimePersonOfTheYear.Models
             Context = columns[8];
         }
 
+        /// <summary>
+        ///     Static method that takes in a start and end year, reads the .csv file with the Time persons of the year,
+        ///         generates a list of TimePerson objects using the data on each line, and then returns a filtered List
+        ///         of all the TimePerson objects within the given year range.
+        /// </summary>
+        /// <param name="start"> Start of year search range </param>
+        /// <param name="end"> End of year search range </param>
+        /// <returns> List of TimePerson objects within given year search ranges </returns>
         public static List<TimePerson> GetPeople(int start, int end)
         {
             List<TimePerson> peopleInRange = null;

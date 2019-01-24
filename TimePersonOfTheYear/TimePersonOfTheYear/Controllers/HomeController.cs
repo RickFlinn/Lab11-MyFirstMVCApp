@@ -16,9 +16,16 @@ namespace TimePersonOfTheYear.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(int start, int end)
+        public IActionResult Index(string start, string end)
         {
-            return RedirectToAction("Results", new { start, end });
+            
+            if (Int32.TryParse(start, out int startYear) && Int32.TryParse(end, out int endYear))
+            {
+                return RedirectToAction("Results", new { startYear, endYear });
+            } else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         public IActionResult Results(int start, int end)
