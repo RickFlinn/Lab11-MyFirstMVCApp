@@ -62,7 +62,7 @@ namespace TimePersonOfTheYear.Models
                     string firstLine = csvLines[0];
                     peopleInRange = csvLines.Skip(1)
                                             .Select(line => new TimePerson(line))
-                                            .Where(person => person.Year > start && person.Year < end)
+                                            .Where(person => person.Year >= start && person.Year <= end)
                                             .ToList();
                 }
                 else
