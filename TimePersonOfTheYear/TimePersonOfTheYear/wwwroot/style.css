@@ -6,7 +6,7 @@
 }
 
 main {
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
 }
@@ -16,9 +16,44 @@ main {
     height: 80%;
     margin: 0 auto;
     border: 10px solid red;
-
+    padding: 10em 0 10em 0;
+    position: relative;
 }
 
 .logo {
+    font-size: 10em;
+    margin: 0 auto 0 auto;
+    font-family: 'Times New Roman';
+    color: red;
+    display: block;
+    text-align: center;
+}
 
+form {
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+label {
+    display: block;
+}
+
+button {
+    margin: 0 auto 0 auto;
+}
+
+table {
+    background-color: white;
+    color: black;
+}
+
+td {
+    border: 1px solid grey;
+    border-bottom: 1px solid red;
+}
+
+th {
+    color: red;
 }
